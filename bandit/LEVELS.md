@@ -50,9 +50,27 @@ sshpass -p 2EW7BBsr6aMMoJ2HjW067dm8EgX26xNe ssh bandit4@bandit.labs.overthewire.
 
 **option 2:** find . -name -file* | xargs file (busca todos los archivos que empiecen con 'file' y el xargs se encarga de tomar cada uno de ellos y aplicarles el file)
 
+CURIOSITY: it's possible to cat even in the same line 'cat $()'. In this case, we got cat $(find . -name -file07)
+
 ```shell
 sshpass -p lrIWWI6bB37kxfiCQZqUdOIYfr6eEeqR ssh bandit5@bandit.labs.overthewire.org -p 2220
 ```
 
+# Level 6
+**flag:** P4L4vucdmLnm8I7Vl7jG1ApGSfjYKqJU
+
+cat $(find . -size 1033c ! -executable -name '*file*') | cuando ponemos con el signo de admiración negamos que esa -executable y en 1033c el c means bytes
+```shell
+sshpass -p P4L4vucdmLnm8I7Vl7jG1ApGSfjYKqJU ssh bandit6@bandit.labs.overthewire.org -p 2220
+```
+
+
+
+# Level 
+**flag:** 
 ```shell
 ```
+
+
+
+
