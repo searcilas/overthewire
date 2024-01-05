@@ -59,7 +59,7 @@ sshpass -p lrIWWI6bB37kxfiCQZqUdOIYfr6eEeqR ssh bandit5@bandit.labs.overthewire.
 # Level 6
 **flag:** P4L4vucdmLnm8I7Vl7jG1ApGSfjYKqJU
 
-cat $(find . -size 1033c ! -executable -name '*file*') | cuando ponemos con el signo de admiración negamos que esa -executable y en 1033c el c means bytes
+cat $(find . -size 1033c ! -executable -name '* file*') | cuando ponemos con el signo de admiración negamos que esa -executable y en 1033c el c means bytes
 ```shell
 sshpass -p P4L4vucdmLnm8I7Vl7jG1ApGSfjYKqJU ssh bandit6@bandit.labs.overthewire.org -p 2220
 ```
