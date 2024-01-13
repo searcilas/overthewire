@@ -106,6 +106,33 @@ sshpass -p 6zPeziLdR2RKNdNYFNb6nVCKzphlXHBM ssh bandit11@bandit.labs.overthewire
 ```
 
 
+# Level 12
+**flag:** JVNBBFSmZwKKOP0XbFXOoW8chDz5yVRv
+using ROT13 (rotar letra por la #13 siguiente) with _tr_ -> cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+
+tr 'lo que se quiere reemplazar' 'a lo que se va a a reemplazar'
+**example:** echo 'hola k ase' | tr 'a' 'e'   ->   _hole k ese_
+```shell
+sshpass -p JVNBBFSmZwKKOP0XbFXOoW8chDz5yVRv ssh bandit12@bandit.labs.overthewire.org -p 2220
+```
+
+# Level 13
+**flag:** wbWdlBxEir4CaE8LaPhauuOo6pwRmrDw
+
+this level sounds like [A Saucerful of Secrets](https://www.youtube.com/watch?v=cEfS98F89Ho). to reverse the hex dump and copy it into another file we use __xxd -r name_of_the_file > new_file__, and let's _file_ (el comando para ver el tipo de archivo) that new file and we'll see it's a gzip, then we apply gzip -d or bzip2 -d depending on the type of the file. IT'S IMPORTANT TO _MV_ (change file names _mv quierocambiareste.txt lepongoestenombre.gz_) THE FILES TO CHANGE THE EXTENSIONS IN ORDER TO BE ABLE TO APPLY GZIP OR BZIP2.
+```shell
+sshpass -p wbWdlBxEir4CaE8LaPhauuOo6pwRmrDw ssh bandit13@bandit.labs.overthewire.org -p 2220
+```
+
+# Level 14
+**flag:** fGrHPx402xGC7U7rXKDaxiWFTOiF0ENq
+
+_ssh -i filewithprivatekey_ -> lo usamos para acceder SSH con una private key as a file. ESE FILE QUE CONTENGA LA PRIVATE KEY NO DEBE TENER ACCESO DE GRUPO NI DE USUARIO PARA QUE SEA UN ARCHIVO PROTEGIDO Y ASI PUEDA SER USADO (se cambian los permisos con _ghmod 700 filewithprivatekey_).
+
+PD: no olvidar copiar la private key que está en el ls de bandit13 en un archivo en su computadora (first you must exit from overthewire server)
+```shell
+sshpass -p fGrHPx402xGC7U7rXKDaxiWFTOiF0ENq ssh bandit14@bandit.labs.overthewire.org -p 2220
+```
 
 
 # Level 
