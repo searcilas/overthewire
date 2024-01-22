@@ -169,6 +169,21 @@ REMEMBER: to see the password in clear text in levels like this, we use -> _cat 
 sshpass -p VwOSWtCA7lRKkTfbr2IDh6awj9RNZM5e ssh bandit17@bandit.labs.overthewire.org -p 2220
 ```
 
+# Level 18
+**flag:** hga5tuuCLF6fFzUpnagiMN8ssu9LFrdg
+
+diff passwords.old passwords.new
+```shell
+42c42
+< p6ggwdNHncnmCNxuAt0KtKVq185ZU7AW
+---
+> hga5tuuCLF6fFzUpnagiMN8ssu9LFrdg
+```
+42c42 indica que la diferencia ocurre en la línea 42. La parte que comienza con < indica la línea en el archivo original passwords.old, y la parte que comienza con > indica la línea en el nuevo archivo passwords.new
+```shell
+sshpass -p hga5tuuCLF6fFzUpnagiMN8ssu9LFrdg ssh bandit18@bandit.labs.overthewire.org -p 2220
+```
+
 # Level 
 **flag:** 
 ```shell
@@ -177,4 +192,4 @@ sshpass -p _ ssh bandit@bandit.labs.overthewire.org -p 2220
 
 base64 -d data.txt
 
-
+hga5tuuCLF6fFzUpnagiMN8ssu9LFrdg
