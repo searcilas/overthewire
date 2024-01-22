@@ -134,6 +134,25 @@ PD: no olvidar copiar la private key que está en el ls de bandit13 en un archiv
 sshpass -p fGrHPx402xGC7U7rXKDaxiWFTOiF0ENq ssh bandit14@bandit.labs.overthewire.org -p 2220
 ```
 
+# Level 15
+**flag:** jN2kgmIXJ6fShzhT2avhotn4Zcka6tnt
+
+it's important to read about _netcat_ -> sintaxis: nc HOST PORT
+
+nc localhost 30000 // (localhost = 127.0.0.1)
+```shell
+sshpass -p jN2kgmIXJ6fShzhT2avhotn4Zcka6tnt ssh bandit15@bandit.labs.overthewire.org -p 2220
+```
+
+# Level 16
+**flag:** JQttfApK4SeyHwDlI9SXGR50qclOAil1
+
+echo "jN2kgmIXJ6fShzhT2avhotn4Zcka6tnt" | openssl s_client -connect localhost:30001 -ign_eof
+
+read about openssl and use it with s_client command to send an encrypted message using echo and then the pipe. -ign_eof ignores the [EOF sign](https://baulderasec.wordpress.com/programando-2/programacion-c-por-la-practica/capitulo-iv/caracter-fin-de-fichero/#:~:text=El%20valor%20EOF%20es%20un,m%C3%A1s%20datos%20disponibles%20para%20leer.) en la entrada estándar
+```shell
+sshpass -p JQttfApK4SeyHwDlI9SXGR50qclOAil1 ssh bandit16@bandit.labs.overthewire.org -p 2220
+```
 
 # Level 
 **flag:** 
