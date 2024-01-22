@@ -127,9 +127,9 @@ sshpass -p wbWdlBxEir4CaE8LaPhauuOo6pwRmrDw ssh bandit13@bandit.labs.overthewire
 # Level 14
 **flag:** fGrHPx402xGC7U7rXKDaxiWFTOiF0ENq
 
-_ssh -i filewithprivatekey_ -> lo usamos para acceder SSH con una private key as a file. ESE FILE QUE CONTENGA LA PRIVATE KEY NO DEBE TENER ACCESO DE GRUPO NI DE USUARIO PARA QUE SEA UN ARCHIVO PROTEGIDO Y ASI PUEDA SER USADO (se cambian los permisos con _ghmod 700 filewithprivatekey_).
+_ssh bandit14@bandit.labs.overthewire.org -p 2220 -i filewithprivatekey_ -> lo usamos para acceder a bandit como lo hemos vendido haciendo con SSH con una private key as a file. ESE FILE QUE CONTENGA LA PRIVATE KEY NO DEBE TENER ACCESO DE GRUPO NI DE USUARIO PARA QUE SEA UN ARCHIVO PROTEGIDO Y ASI PUEDA SER USADO (se cambian los permisos con _ghmod 700 filewithprivatekey_).
 
-PD: no olvidar copiar la private key que está en el ls de bandit13 en un archivo en su computadora (first you must exit from overthewire server)
+PD: no olvidar copiar la private key que está en el ls de bandit13 en un archivo en su computadora (first you must exit from overthewire server). Esto se puede hacer con "echo PASSWORD > private.key"
 ```shell
 sshpass -p fGrHPx402xGC7U7rXKDaxiWFTOiF0ENq ssh bandit14@bandit.labs.overthewire.org -p 2220
 ```
@@ -152,6 +152,21 @@ echo "jN2kgmIXJ6fShzhT2avhotn4Zcka6tnt" | openssl s_client -connect localhost:30
 read about openssl and use it with s_client command to send an encrypted message using echo and then the pipe. -ign_eof ignores the [EOF sign](https://baulderasec.wordpress.com/programando-2/programacion-c-por-la-practica/capitulo-iv/caracter-fin-de-fichero/#:~:text=El%20valor%20EOF%20es%20un,m%C3%A1s%20datos%20disponibles%20para%20leer.) en la entrada estándar
 ```shell
 sshpass -p JQttfApK4SeyHwDlI9SXGR50qclOAil1 ssh bandit16@bandit.labs.overthewire.org -p 2220
+```
+
+# Level 17
+**flag:** VwOSWtCA7lRKkTfbr2IDh6awj9RNZM5e
+
+nmap -p 31000-32000 localhost
+
+then, what I did was the same as level 16 (send a message with echo to each port I found with nmap) and finally found a SSH private key so I did the same thing as level 14.
+
+_ssh bandit17@bandit.labs.overthewire.org -p 2220 -i private.key_
+
+REMEMBER: to see the password in clear text in levels like this, we use -> _cat /etc/bandit_pass/bandit17_
+
+```shell
+sshpass -p VwOSWtCA7lRKkTfbr2IDh6awj9RNZM5e ssh bandit17@bandit.labs.overthewire.org -p 2220
 ```
 
 # Level 
