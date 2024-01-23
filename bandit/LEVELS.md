@@ -184,6 +184,24 @@ diff passwords.old passwords.new
 sshpass -p hga5tuuCLF6fFzUpnagiMN8ssu9LFrdg ssh bandit18@bandit.labs.overthewire.org -p 2220
 ```
 
+# Level 19
+**flag:** awhqfNnAbc1naukrpqDYcF95h7HoMTrC
+
+sshpass -p hga5tuuCLF6fFzUpnagiMN8ssu9LFrdg ssh bandit18@bandit.labs.overthewire.org -p 2220 cat readme
+
+"If a command is specified, it will be executed on the remote host instead of a login shell". In this case, the command is _cat readme_
+```shell
+sshpass -p awhqfNnAbc1naukrpqDYcF95h7HoMTrC ssh bandit19@bandit.labs.overthewire.org -p 2220
+```
+
+# Level 20
+**flag:** VxCazJaVykI6W36BkBU0mJTCM8rR95XT
+
+Al igual que el nivel anterior, ejecutamos el comando directamente para obtener la contraseña. En este caso, al hacer ls -l nos damos cuenta que bandit20-do ya tiene el setuid y es un executable. Entonces -> _./bandit20-do cat /etc/bandit_pass/bandit20_
+```shell
+sshpass -p VxCazJaVykI6W36BkBU0mJTCM8rR95XT ssh bandit20@bandit.labs.overthewire.org -p 2220
+```
+
 # Level 
 **flag:** 
 ```shell
@@ -192,4 +210,5 @@ sshpass -p _ ssh bandit@bandit.labs.overthewire.org -p 2220
 
 base64 -d data.txt
 
-hga5tuuCLF6fFzUpnagiMN8ssu9LFrdg
+
+VxCazJaVykI6W36BkBU0mJTCM8rR95XT
