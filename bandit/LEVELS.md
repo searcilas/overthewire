@@ -211,7 +211,18 @@ Use 2 terminals. La primera, execute the executable in any port. La segunda, _nc
 sshpass -p NvEJF7oVjkddltPSrdKEFOllh9V1IBcq ssh bandit21@bandit.labs.overthewire.org -p 2220
 ```
 
+# Level 22
+**flag:** WdDozAdTM2z9DiFEQ2mGlwngMfj4EZff
 
+cd /etc/cron.d
+
+cat cronjob_bandit22
+
+cat /usr/bin/cronjob_bandit22.sh
+
+```shell
+sshpass -p WdDozAdTM2z9DiFEQ2mGlwngMfj4EZff ssh bandit22@bandit.labs.overthewire.org -p 2220
+```
 # Level 
 **flag:** 
 ```shell
