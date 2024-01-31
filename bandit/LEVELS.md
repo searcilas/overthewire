@@ -202,13 +202,19 @@ Al igual que el nivel anterior, ejecutamos el comando directamente para obtener 
 sshpass -p VxCazJaVykI6W36BkBU0mJTCM8rR95XT ssh bandit20@bandit.labs.overthewire.org -p 2220
 ```
 
+# Level 21
+**flag:** NvEJF7oVjkddltPSrdKEFOllh9V1IBcq
+
+Use 2 terminals. La primera, execute the executable in any port. La segunda, _nc -l -v -p port_ (ESE port DEBE SER EL MISMO QUE SE USÓ EN LA PRIMER TERMINAL)
+
+```shell
+sshpass -p NvEJF7oVjkddltPSrdKEFOllh9V1IBcq ssh bandit21@bandit.labs.overthewire.org -p 2220
+```
+
+
 # Level 
 **flag:** 
 ```shell
 sshpass -p _ ssh bandit@bandit.labs.overthewire.org -p 2220
 ```
 
-base64 -d data.txt
-
-
-VxCazJaVykI6W36BkBU0mJTCM8rR95XT
